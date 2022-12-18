@@ -4,14 +4,20 @@
 	let r17 = false;
 	let sqr = false;
 	//angles for sines law + one side
-	let {a1, a2, a3, s1, sinesAnswer}: any = 0;
+	let a1: number = 0;
+	let a2: number = 0;
+	let a3: number = 0;
+	let s1: number = 0;
+	let sinesAnswer: number = 0;
 
 	//sides for pythagorean theorem + pythaAnswer
 	let a:number = 0;
 	let b:number = 0;
 	let c:number = 0;
 	let pythaAnswer:number = 0;
-	let {isasqr, isbsqr, iscsqr}: any = false;
+	let isasqr: boolean = false;
+	let isbsqr: boolean = false;
+	let iscsqr: boolean = false;
 
 	$: {
 		sinesAnswer = sinesLaw(a1, a2, a3, s1);
