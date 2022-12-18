@@ -1,25 +1,26 @@
 <script lang="ts">
-	import {find, sinesLaw} from '$lib/utils/math';
+	import {pythagoras, sinesLaw} from '$lib/utils/math';
 	//whether or not the widgets should be visible
 	let r17 = false;
 	let sqr = false;
 	//angles for sines law + one side
-	let {a1, a2, a3, s1, result}: any = 0;
+	let {a1, a2, a3, s1, sinesAnswer}: any = 0;
 
-	//sides for pythagorean theorem + answer
-	let {a, b, c, answer}: any = 0;
+	//sides for pythagorean theorem + pythaAnswer
+	let a:number = 0;
+	let b:number = 0;
+	let c:number = 0;
+	let pythaAnswer:number = 0;
 	let {isasqr, isbsqr, iscsqr}: any = false;
 
 	$: {
-		result = sinesLaw(a1, a2, a3, s1);
+		sinesAnswer = sinesLaw(a1, a2, a3, s1);
 	}
 
-	function pythagoras() {
-		answer = find(isasqr, isbsqr, iscsqr, a, b, c);
-		a = 0;
-		b = 0;
-		c = 0;
+	$: {
+		pythaAnswer = pythagoras(isasqr, isbsqr, iscsqr, a, b, c);
 	}
+
 </script>
 
 <div class="flex flex-col items-start p-3">
@@ -38,7 +39,7 @@
 		<input class="w-1/6 p-1 mb-3 border-2 border-black rounded-md" bind:value={a3} />
 		<p>side</p>
 		<input class="w-1/6 p-1 mb-3 border-2 border-black rounded-md" bind:value={s1} />
-		<p class="mb-3">Area: {result}</p>
+		<p class="mb-3 font-medium">Area: {isNaN(sinesAnswer) ? 0 : sinesAnswer}</p>
 	{/if}
 	<button on:click={() => (sqr = !sqr)} class="h-auto p-2 font-medium bg-teal-100 rounded-lg mb-3"
 		>Pythagorean Theorem</button
@@ -50,7 +51,7 @@
 			<input class="w-full p-1 mb-3 border-2 border-black rounded-md" bind:value={a} />
 			<input
 				type="checkbox"
-				class=" accent-teal-100 checked:accent-teal-500 hover:accent-teal-400 w-1/6 transition"
+				class=" accent-teal-100 checked:accent-teal-500 hover:accent-teal-400 w-1/6 mb-2 transition"
 				bind:checked={isasqr}
 			/>
 		</div>
@@ -59,7 +60,7 @@
 			<input class="w-full p-1 mb-3 border-2 border-black rounded-md" bind:value={b} />
 			<input
 				type="checkbox"
-				class=" accent-teal-100 checked:accent-teal-500 hover:accent-teal-400 w-1/6 transition"
+				class=" accent-teal-100 checked:accent-teal-500 hover:accent-teal-400 w-1/6 mb-2 transition"
 				bind:checked={isbsqr}
 			/>
 		</div>
@@ -68,11 +69,10 @@
 			<input class="w-full p-1 mb-3 border-2 border-black rounded-md" bind:value={c} />
 			<input
 				type="checkbox"
-				class="accent-teal-100 checked:accent-teal-500 hover:accent-teal-400 w-1/6 transition"
+				class="accent-teal-100 checked:accent-teal-500 hover:accent-teal-400 w-1/6 mb-2 transition"
 				bind:checked={iscsqr}
 			/>
 		</div>
-		<button class="h-auto p-2 font-medium bg-teal-100 rounded-lg" on:click={pythagoras}>Find</button>
-		<p>Answer: {answer}</p>
+		<p class="font-medium mb-3">Answer: {pythaAnswer}</p>
 	{/if}
 </div>
