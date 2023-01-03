@@ -1,3 +1,7 @@
+<script>
+	import Header from "$lib/views/Header.svelte";
+</script>
+<Header />
 <div class="flex flex-col items-start p-3">
 	<h1 class="mb-3 text-2xl font-bold">Popular</h1>
 	<a class="h-auto p-2 mb-3 font-medium bg-teal-100 rounded-lg" href="/math/#r17">R.17 Calculator</a
