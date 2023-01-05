@@ -1,8 +1,9 @@
 <script lang="ts">
-	import {pythagoras, sinesLaw} from '$lib/utils/math';
+	import {pythagoras, sinesLaw, distance} from '$lib/utils/math';
 	//whether or not the widgets should be visible
 	let r17 = false;
 	let sqr = false;
+	let distanceixl = false;
 	//angles for sines law + one side
 	let a1: number = 0;
 	let a2: number = 0;
@@ -19,12 +20,21 @@
 	let isbsqr: boolean = false;
 	let iscsqr: boolean = false;
 
+	let x1: number = 0;
+	let x2: number = 0;
+	let y1: number = 0;
+	let y2: number = 0;
+	let danswer: number = 0;
+
 	$: {
 		sinesAnswer = sinesLaw(a1, a2, a3, s1);
 	}
 
 	$: {
 		pythaAnswer = pythagoras(isasqr, isbsqr, iscsqr, a, b, c);
+	}
+	$: {
+		danswer = distance(x1, x2, y1, y2)
 	}
 
 </script>
@@ -80,5 +90,19 @@
 			/>
 		</div>
 		<p class="font-medium mb-3">Answer: {pythaAnswer}</p>
+	{/if}
+	<button on:click={() => (distanceixl = !distanceixl)} class="h-auto p-2 font-medium bg-teal-100 rounded-lg mb-3"
+		>Distance</button
+	>
+	{#if distanceixl}
+		<div class="flex gap-4">
+			<input class="w-full p-1 mb-3 border-2 border-black rounded-md" placeholder="x1" bind:value={x1} />
+			<input class="w-full p-1 mb-3 border-2 border-black rounded-md" placeholder="y1" bind:value={y1} />
+		</div>
+		<div class="flex gap-4">
+			<input class="w-full p-1 mb-3 border-2 border-black rounded-md" placeholder="x2" bind:value={x2} />
+			<input class="w-full p-1 mb-3 border-2 border-black rounded-md" placeholder="y2" bind:value={y2} />
+		</div>
+		<p>Answer: {danswer}</p>
 	{/if}
 </div>

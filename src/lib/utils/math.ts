@@ -36,3 +36,7 @@ export function sinesLaw(a1r: number, a2r: number, a3r: number, s1: number): num
 	const a3 = degrees(a3r);
 	return ((s1 * Math.sin(a2)) / Math.sin(a1)) * Math.sin(a3) * s1 * 0.5;
 }
+
+export function distance(x1: number, x2: number, y1: number, y2: number): number {
+	return Math.sqrt(Math.pow(x2-x1, 2)+Math.pow(y2-y1, 2));
+}
