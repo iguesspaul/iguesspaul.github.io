@@ -52,7 +52,7 @@
 		<div class="w-1/2 h-full bg-teal-900 ">
 			<div class="grid w-full h-full grid-cols-4 grid-rows-4 gap-4 p-4 bg-transparent">
 				<div class="flex items-center justify-center col-span-1 row-span-1 bg-teal-50 rounded-2xl">
-					<h1 class="mb-2 text-4xl font-bold">Hello Paul.</h1>
+					<h1 class="mb-2 text-4xl font-bold text-center">Hello Paul.</h1>
 				</div>
 				<div class="flex items-center justify-center col-span-3 row-span-1 bg-teal-50 rounded-2xl">
 					<h1 class="mb-2 text-4xl font-bold">{final}</h1>
@@ -104,7 +104,7 @@
 					{#each data.res as task}
 						<h1 class="text-4xl font-medium text-white">- {task.content}</h1>
 					{:else}
-						<h1>tasks done</h1>
+						<h1 class="text-4xl font-extrabold text-teal-50">tasks done</h1>
 					{/each}
 				</div>
 				<div
