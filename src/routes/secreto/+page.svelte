@@ -55,7 +55,7 @@
 					<h1 class="mb-2 text-4xl font-bold text-center">Hello Paul.</h1>
 				</div>
 				<div class="flex items-center justify-center col-span-3 row-span-1 bg-teal-50 rounded-2xl">
-					<h1 class="mb-2 text-4xl font-bold">{final}</h1>
+					<h1 class="mb-2 text-4xl font-bold text-center">{final}</h1>
 				</div>
 				<div
 					class="flex items-center justify-center col-span-1 row-span-1 transition bg-teal-50 rounded-2xl active:scale-90 hover:cursor-pointer"
