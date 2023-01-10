@@ -38,7 +38,7 @@
 
 	function googleSearch(e: KeyboardEvent) {
 		if (e.key === 'Enter') {
-			goto(`https://www.google.com/search?client=firefox-b-d&q=${search}`);
+			goto(`https://www.google.com/search&q=${search}`);
 		}
 	}
 
