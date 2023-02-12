@@ -3,10 +3,10 @@
 	import { goto } from '$app/navigation';
 	export let data: PageData;
 	const date: Date = new Date();
-	const day = date.getDate();
-	const month = date.getMonth();
-	const year = date.getFullYear();
-	const months = [
+	const day: number = date.getDate();
+	const month: number = date.getMonth();
+	const year: number = date.getFullYear();
+	const months: string[] = [
 		'January',
 		'February',
 		'March',
@@ -20,7 +20,7 @@
 		'November',
 		'December'
 	];
-	const quotes = [
+	const quotes: string[] = [
 		'The greatest glory in living lies not in never falling, but in rising every time we fall.',
 		'The way to get started is to quit talking and begin doing.',
 		'The only true wisdom is in knowing you know nothing.',
@@ -42,8 +42,8 @@
 		}
 	}
 
-	const final = `Today is the ${day}${append(day)} of ${months[month]}, ${year}.`;
-	const quote = quotes[Math.floor(Math.random() * 5)];
+	const final: string = `Today is the ${day}${append(day)} of ${months[month]}, ${year}.`;
+	const quote: string = quotes[Math.floor(Math.random() * 5)];
 	let search = '';
 </script>
 
