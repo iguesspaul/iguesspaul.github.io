@@ -27,7 +27,7 @@
 		'Quality is not an act, it is a habit.',
 		'Know how to listen and you will profit even from those who talk badly.'
 	];
-	const append = (n: number) => {
+	const append = (n: number): String => {
 		const lastn = String(n);
 		const lastOf = Number(lastn[lastn.length - 1]);
 		if (lastOf == 1) return 'st';
