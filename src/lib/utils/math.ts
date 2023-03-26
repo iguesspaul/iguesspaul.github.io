@@ -40,3 +40,7 @@ export function sinesLaw(a1r: number, a2r: number, a3r: number, s1: number): num
 export function distance(x1: number, x2: number, y1: number, y2: number): number {
 	return Math.sqrt(Math.pow(x2-x1, 2)+Math.pow(y2-y1, 2));
 }
+
+export function spheresurface(radius: number): number {
+	return Number((4 * Math.PI * Math.pow(radius, 2)).toFixed(2));
+}

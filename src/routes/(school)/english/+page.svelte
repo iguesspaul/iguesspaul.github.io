@@ -1,20 +1,17 @@
+<script>
+	import links from "./page.json";
+</script>
+
 <div class="flex flex-col items-start p-3">
-	<h1 class="mb-3 text-2xl font-bold">Grade 9</h1>
-	<a
-		id="tkam"
-		class="h-auto p-2 mb-3 font-medium bg-teal-100 rounded-lg"
-		href="https://www.litcharts.com/lit/to-kill-a-mockingbird">TKAM guide</a
-	>
-	<a
-		id="chatgpt"
-		class="h-auto p-2 mb-3 font-medium bg-teal-100 rounded-lg"
-		href="https://chat.openai.com"
-		>Chat GPT (writes essays and essays titles)</a
-	>
-	<a
-		id="romeo"
-		class="h-auto p-2 font-medium bg-teal-100 rounded-lg"
-		href="https://www.litcharts.com/lit/romeo-and-juliet"
-		>Romeo & Juliet Guide</a
-	>
+	<h1 class="mb-3 ml-3 text-2xl font-bold">Grade 9</h1>
+	{#each links.links as link}
+		<a
+			id={link.id}
+			class="h-auto p-2 m-2 font-semibold bg-teal-100 rounded-lg"
+			href={link.href}
+		>{link.name}
+		</a>
+	{/each}
+	
+
 </div>

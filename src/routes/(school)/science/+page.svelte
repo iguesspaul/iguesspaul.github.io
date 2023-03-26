@@ -1,7 +1,7 @@
 <script lang="ts">
 	//kinetic energy
-	let kmass: number = 0;
-	let velocity: number = 0;
+	let kmass: number;
+	let velocity: number;
 	let kineticEnergy: number = 0;
 
 	$: {
@@ -9,9 +9,9 @@
 		kineticEnergy = kmass * 0.5 * Math.pow(velocity, 2);
 	}
 	//potential energy
-	let height: number = 0;
-	let mass: number = 0;
-	let gravity: number = 0;
+	let height: number;
+	let mass: number;
+	let gravity: number;
 	let potentialEnergy: number = 0;
 	$: {
 		//every time height, mass, or gravity changes, it updates

@@ -1,0 +1,24 @@
+{
+    "links": [
+        {
+            "id": "tkam",
+            "name": "TKAM Guide",
+            "href": "https://www.litcharts.com/lit/to-kill-a-mockingbird"
+        },
+        {
+            "id": "romeo",
+            "name": "Romeo and Juliet Guide",
+            "href": "https://www.litcharts.com/lit/romeo-and-juliet"
+        },
+        {
+            "id": "mybib",
+            "name": "MyBib for Citations",
+            "href": "https://mybib.com"
+        },
+        {
+            "id": "mla",
+            "name": "Format Essay in MLA",
+            "href": "https://www.scribbr.com/mla/formatting/"
+        }
+    ]
+}
