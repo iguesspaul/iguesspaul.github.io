@@ -12,6 +12,4 @@
 		>{link.name}
 		</a>
 	{/each}
-	
-
 </div>
